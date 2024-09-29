@@ -41,6 +41,9 @@
 #include "Loot/LootMgr.h"
 #include "Anticheat/Anticheat.hpp"
 
+//SOULS WOW MOD INCLUDE
+#include "Soulswow/SoulsCore.h"
+
 #include <mutex>
 #include <deque>
 #include <memory>
@@ -888,6 +891,9 @@ void WorldSession::SendMotd(Player* currChar)
         ChatHandler(currChar).PSendSysMessage("%s", str_motd.substr(pos).c_str());
         ++linecount;
     }
+
+    //SOULS WOW HOOK
+    sSouls.SendSoulsLoginMessage( currChar );
 
     DEBUG_LOG("WORLD: Sent motd (SMSG_MOTD)");
 }

@@ -6,19 +6,34 @@
 class WorldSession;
 class ChatHandler;
 
+enum SoulCreatures{
+    HOGGER = 448,
+    EDWIN_VANCLEEF = 639,
+};
+
+enum SoulTierLevel{
+    TIER_0 = 5,
+    TIER_1 = 15,
+    TIER_2 = 16
+};
+
 class SoulsCore
 {
 public:
     SoulsCore();
     void Initialize();
+    void OnCreatureDeath( uint32 creatureId );
+    void SendSoulsLoginMessage( Player* player );
+private:
+    std::string login_message = "";
+    
+    void InitializeSoulsState();
+    void SetSoulsState(SoulTierLevel state);
     void AddKillToDatabase( uint32 creature_entry );
-    void GetKillsByCreatureId( uint32 creature_entry );
+    uint64 GetKillCountByCreatureId( uint32 creature_entry );
     void SendGameChatMessage( std::string msg);
     void SendScreenMessage( std::string msg );
-    void OnCreatureDeath( uint32 creatureId );
-private:
-    uint16 hoggerKills = 0;
-    uint16 vancleefKills = 0;
+
 };
 
 #define sSouls MaNGOS::Singleton<SoulsCore>::Instance()

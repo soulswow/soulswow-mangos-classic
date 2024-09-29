@@ -49,7 +49,7 @@
 #include "Entities/CreatureLinkingMgr.h"
 #include "Maps/SpawnManager.h"
 
-//SOULS WOW MOD
+//SOULS WOW MOD INCLUDE
 #include "Soulswow/SoulsCore.h"
 
 // apply implementation of the singletons
@@ -1811,7 +1811,7 @@ void Creature::SetDeathState(DeathState s)
 {
     if (s == JUST_DIED)
     {
-        //SOULS WOW MOD
+        //SOULS WOW MOD HOOK
         sSouls.OnCreatureDeath(m_creatureInfo->Entry);
         if (!m_respawnOverriden)
         {

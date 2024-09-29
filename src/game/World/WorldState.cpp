@@ -29,7 +29,7 @@
 #include "AI/ScriptDevAI/scripts/world/scourge_invasion.h"
 #include "Globals/ObjectAccessor.h"
 
-//SOULS WOW MOD
+//SOULS WOW MOD INCLUDE
 #include "Soulswow/SoulsCore.h"
 
 std::map<AQResources, WorldStateID> aqWorldstateMap =
@@ -224,7 +224,7 @@ void WorldState::Load()
     }
     RespawnEmeraldDragons();
 
-    //SOULS WOW MOD
+    //SOULS WOW MOD HOOK
     sSouls.Initialize();
 }
 
