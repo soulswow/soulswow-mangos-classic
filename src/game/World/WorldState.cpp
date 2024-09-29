@@ -29,6 +29,9 @@
 #include "AI/ScriptDevAI/scripts/world/scourge_invasion.h"
 #include "Globals/ObjectAccessor.h"
 
+//SOULS WOW MOD
+#include "Soulswow/SoulsCore.h"
+
 std::map<AQResources, WorldStateID> aqWorldstateMap =
 {
     {AQ_PEACEBLOOM, WORLD_STATE_AQ_PEACEBLOOM_NOW},
@@ -220,6 +223,9 @@ void WorldState::Load()
         HandleDefendedZones();
     }
     RespawnEmeraldDragons();
+
+    //SOULS WOW MOD
+    sSouls.Initialize();
 }
 
 void WorldState::Save(SaveIds saveId)

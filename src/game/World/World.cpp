@@ -1416,6 +1416,7 @@ void World::SetInitialWorldSettings()
 
     sLog.outString("---------------------------------------");
     sLog.outString("      CMANGOS: World initialized       ");
+    sLog.outString("     Running with Souls WoW - Mod      ");    
     sLog.outString("---------------------------------------");
     sLog.outString();
 

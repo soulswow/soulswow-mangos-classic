@@ -635,6 +635,10 @@ class World
 
         LFGQueue& GetLFGQueue() { return m_lfgQueue; }
         void StartLFGQueueThread();
+
+        //SOULS WOW MOD
+        std::unordered_map<uint32, WorldSession*> GetSessionMap(){ return m_sessions; }
+
     protected:
         void _UpdateGameTime();
         // callback for UpdateRealmCharacters
